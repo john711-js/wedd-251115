@@ -20,3 +20,29 @@
 .content {
   background-color: #efefef;
 }
+
+/* デフォルト（PCなど広い画面）のスタイル */
+body {
+  font-size: 16px;
+}
+
+/* 画面幅が1024px以下のデバイス（タブレットやスマートフォン）に適用 */
+@media (max-width: 1024px) {
+  body {
+    font-size: 14px; /* 文字サイズを小さくする */
+  }
+  .content {
+    width: 90%; /* コンテンツの幅を調整する */
+  }
+}
+
+/* 画面幅が768px以下のデバイス（スマートフォン）に適用 */
+@media (max-width: 768px) {
+  .content {
+    width: 100%; /* 幅を100%にして縦に並べる */
+  }
+
+  .button-2 {
+    width: 80%; /* ボタンの幅を調整する */
+  }
+}
