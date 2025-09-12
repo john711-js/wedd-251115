@@ -1,4 +1,4 @@
-.button-2 {
+.button-G {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,40 +7,36 @@
     padding: .9em 2em;
     border: none;
     border-radius: 25px;
-    background-color: #2589d0;
-    color: #fff;
+    background-color: #ddb97f;
+    color: #000;
     font-weight: 600;
     font-size: 1em;
 }
 
-.button-2:hover {
-    background-color: #1579c0;
+.button-G:hover {
+    background-color: #7e6743;
 }
 
-.content {
-  background-color: #efefef;
-}
 
 /* デフォルト（PCなど広い画面）のスタイル */
 body {
   font-size: 16px;
+    background-color: #852423;
 }
 
 /* 画面幅が1024px以下のデバイス（タブレットやスマートフォン）に適用 */
 @media (max-width: 1024px) {
   body {
     font-size: 14px; /* 文字サイズを小さくする */
-  }
-  .content {
-    width: 90%; /* コンテンツの幅を調整する */
+    width: 90%;
   }
 }
 
 /* 画面幅が768px以下のデバイス（スマートフォン）に適用 */
 @media (max-width: 768px) {
-  .content {
-    width: 100%; /* 幅を100%にして縦に並べる */
-  }
+    body {
+        font-size: 12px; /* さらに文字サイズを小さくする */
+    }
 
   .button-2 {
     width: 80%; /* ボタンの幅を調整する */
