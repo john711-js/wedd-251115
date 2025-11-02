@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--★変更-->
+	<title>第３問</title>
+    <!--★変更-->
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+			<img src="logo.png" width="60">
+		<br>
+		<!--★変更-->
+		<h1>第３問</h1>
+        <br>
+		<!--★変更-->
+		<button class="button-G" onclick="answer('Ａ')">Ａ：スカイツリー</button>
+        <br>
+		<button class="button-G" onclick="answer('Ｂ')">Ｂ：東京タワー</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｃ')">Ｃ：ディズニー</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｄ')">Ｄ：赤坂パークビル（会社）</button>
+        <br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const payload = {
+					// ★変更
+					quizNo: 'dai3mon',
+					answer: answertext,
+					team: "ハッフルパフ"
+				};
+
+				fetch('https://cc6bhxbw1f.execute-api.ap-northeast-1.amazonaws.com/default/quiz-answer-no1', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(payload)
+				})
+				      .then(response => response.json())
+				      .then(data => {
+       					console.log('送信成功:', data);
+						// ★変更
+						location.href = 'answer-3.html';
+      			})
+      				.catch(error => {
+						console.error('送信エラー:', error);
+    				alert('送信に失敗しました。');
+     			});
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>

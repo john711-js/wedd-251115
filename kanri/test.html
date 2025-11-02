@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--★変更-->
+	<title>第１問　正解入力</title>
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+		<br>
+		<!--★変更-->
+		<h1><font color="#fff">第１問　正解入力</font></h1>
+		<br>
+		<!--★変更-->
+		<div class="block4masu">
+		<button class="button-4" onclick="answer('Ａ')">Ａ</button>
+		<button class="button-4" onclick="answer('Ｂ')">Ｂ</button>
+		<button class="button-4" onclick="answer('Ｃ')">Ｃ</button>
+		<button class="button-4" onclick="answer('Ｄ')">Ｄ</button>
+		</div>
+		<br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const answer = answertext;
+				if (!answer) {
+					alert("正解を入力してください");
+					return;
+				}
+				localStorage.setItem('correctAnswer', answer);
+				// ★変更
+				window.location.href = 'result-1.html';			
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>

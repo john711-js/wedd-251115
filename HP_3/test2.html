@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>第２問</title>
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+			<img src="logo.png" width="60">
+		<br>
+		<h1>第２問</h1>
+        <br>
+		<button class="button-G" onclick="answer('Ａ')">Ａ：-10kg</button>
+        <br>
+		<button class="button-G" onclick="answer('Ｂ')">Ｂ：-5kg</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｃ')">Ｃ：±0kg</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｄ')">Ｄ：+5kg</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｅ')">Ｅ：+10kg</button>
+		<br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const payload = {
+					// ★変更
+					quizNo: 'dai2mon',
+					answer: answertext,
+					team: "ハッフルパフ"
+				};
+
+				fetch('https://cc6bhxbw1f.execute-api.ap-northeast-1.amazonaws.com/default/quiz-answer-no1', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(payload)
+				})
+				      .then(response => response.json())
+				      .then(data => {
+       					console.log('送信成功:', data);
+						location.href = 'answer-2.html';
+      			})
+      				.catch(error => {
+						console.error('送信エラー:', error);
+    				alert('送信に失敗しました。');
+     			});
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>

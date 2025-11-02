@@ -1,0 +1,126 @@
+.button-G {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin:0 auto;
+    padding: .9em 2em;
+    border: none;
+    border-radius: 25px;
+    background-color: #977f99;
+    color: #000;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button-G:hover {
+    background-color: #4f3c51;
+}
+
+.block4masu {
+    display: flex;
+    flex-wrap: wrap; /* 折り返す */
+    width: 30%; /* 例として幅を設定 */
+    justify-content: space-between; /* ボタンの間にスペースを空ける */
+    margin-left: 10px;
+    margin: 10px;
+}
+
+.button-4 {
+    width: 48%; /* 幅を調整して2列にする */
+    margin-bottom: 20px; /* 下に余白を追加 */
+    padding: .9em 2em;
+    border: none;
+    border-radius: 25px;
+    background-color: #977f99;
+    color: #000;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.button-4:hover {
+    background-color: #4f3c51;
+}
+
+.heading-10 {
+    display: inline-block;
+    position: relative;
+    transform: rotate(-5deg);
+    padding: .5em .7em;
+    border-left: 2px dotted rgba(0, 0, 0, .1);
+    border-right: 2px dotted rgba(0, 0, 0, .1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    background-color: rgb(175, 173, 169);
+    color: #333333;
+}
+
+/* デフォルト（PCなど広い画面）のスタイル */
+body {
+  font-size: 16px;
+  background-color: #744e80;
+  color: #fff;
+}
+.textbox-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin:0 auto;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 25px;
+    background: #f7f7f7;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.textbox-3::placeholder {
+    color: #999;
+}
+
+/* 画面幅が1024px以下のデバイス（タブレットやスマートフォン）に適用 */
+@media (max-width: 1024px) {
+  body {
+    font-size: 17px; /* 文字サイズを小さくする */
+    width: 90%;
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 余白を確保 */
+  }
+}
+
+  .textbox-3 {
+    padding: 15px 20px;
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* 画面幅が768px以下のデバイス（スマートフォン）に適用 */
+@media (max-width: 768px) {
+  body {
+      font-size: 17px; /* さらに文字サイズを小さくする */
+      margin: 0 auto; /* 中央寄せ */
+      padding: 0 20px; /* 余白を確保 */
+
+  }
+
+  .block4masu {
+    display: flex;
+    flex-wrap: wrap; /* 折り返す */
+    width: 90%; /* 例として幅を設定 */
+    justify-content: space-between; /* ボタンの間にスペースを空ける */
+}
+
+
+  .button-G {
+    width: 100%; /* ボタンの幅を調整する */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 15px 20px; /* 余白を確保 */
+    font-size: 17px;
+  }
+
+  .textbox-3 {
+    width: 80%;
+    padding: 15px 20px;
+    margin: 0 auto; /* 中央寄せ */
+}
+}

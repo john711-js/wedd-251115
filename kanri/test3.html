@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- ★変更 -->
+	<title>第３問　正解入力</title>
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+		<br>
+		<!-- ★変更 -->
+		<h1><font color="#fff">第３問　正解入力</font></h1>
+		<br>
+		<!--★変更-->
+		<button class="button-G" onclick="answer('Ａ')">Ａ：スカイツリー</button>
+        <br>
+		<button class="button-G" onclick="answer('Ｂ')">Ｂ：東京タワー</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｃ')">Ｃ：ディズニー</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｄ')">Ｄ：赤坂パークビル（会社）</button>
+        <br>
+		<br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const answer = answertext;
+				if (!answer) {
+					alert("正解を入力してください");
+					return;
+				}
+				localStorage.setItem('correctAnswer', answer);
+				// ★変更
+				window.location.href = 'result-3.html';			
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>

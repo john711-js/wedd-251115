@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- ★変更 -->
+	<title>第５問　正解入力</title>
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+		<br>
+		<!-- ★変更 -->
+		<h1><font color="#fff">第５問　正解入力</font></h1>
+		<br>
+		<!-- ★変更 -->
+        <input type="text" id="freeInput" class="textbox-3" placeholder="ひらがな入力"/>
+        <br>
+        <br>
+		<button class="button-G" onclick="answer(document.getElementById('freeInput').value)">送信</button>        
+		<br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const answer = answertext;
+				if (!answer) {
+					alert("正解を入力してください");
+					return;
+				}
+				localStorage.setItem('correctAnswer', answer);
+				// ★変更
+				window.location.href = 'result-5.html';			
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>

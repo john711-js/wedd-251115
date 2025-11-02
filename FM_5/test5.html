@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--★変更-->
+	<title>第５問</title>
+	<!--★変更-->
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+			<img src="logo.png" width="60">
+		<br>
+		<!--★変更-->
+		<h1><font color="#fff">第５問</font></h1>
+		<br>
+        <input type="text" id="freeInput" class="textbox-3" placeholder="ひらがな入力"/>
+        <br>
+        <br>
+		<button class="button-G" onclick="answer(document.getElementById('freeInput').value)">送信</button>        
+		<br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const payload = {
+					// ★変更
+					quizNo: 'dai5mon',
+					answer: answertext,
+					team: "親族"
+				};
+
+				fetch('https://cc6bhxbw1f.execute-api.ap-northeast-1.amazonaws.com/default/quiz-answer-no1', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(payload)
+				})
+				      .then(response => response.json())
+				      .then(data => {
+       					console.log('送信成功:', data);
+						// ★変更
+						location.href = 'answer-5.html';
+      			})
+      				.catch(error => {
+						console.error('送信エラー:', error);
+    				alert('送信に失敗しました。');
+     			});
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>

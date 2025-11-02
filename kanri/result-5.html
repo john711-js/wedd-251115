@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--★変更-->
+<title>第５問　正答率</title>
+<link href="design.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+</head>
+<body>
+		<center>
+		<br>
+        <!--★変更-->
+		<h1><font color="#fff">第５問　正答率</font></h1>
+		<br>
+        <div id="results">読み込み中...</div>
+
+        <script>
+            const correctAnswer = localStorage.getItem('correctAnswer');
+            if (!correctAnswer) {
+            document.getElementById('results').innerText = '正解が未入力です。前のページに戻ってください。';
+            } else {
+            
+			fetch('https://342l536aki.execute-api.ap-northeast-1.amazonaws.com/default/quiz-syukei', {
+	    		method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+                        // ★変更
+                        quizNo: 'dai5mon',
+                        correct_answer: correctAnswer
+                    })
+				})
+
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('results');
+                container.innerHTML = '';
+                for (const team in data) {
+                const stats = data[team];
+                const div = document.createElement('div');
+                div.innerHTML = `<strong>${team}</strong>: ${stats.accuracy_percent}% (${stats.correct}/${stats.total})`;
+                container.appendChild(div);
+                }
+            })
+            
+            .catch(err => {
+                document.getElementById('results').innerText = 'データ取得に失敗しました';
+                console.error(err);
+            });
+            }
+        </script>
+
+        <br>
+        <!--★変更-->
+        式ももうすぐ終わり！ラストスパート！
+		</center>
+</body>
+</html>

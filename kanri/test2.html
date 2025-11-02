@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- ★変更 -->
+	<title>第２問　正解入力</title>
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+		<center>
+		<br>
+		<!-- ★変更 -->
+		<h1><font color="#fff">第２問　正解入力</font></h1>
+		<br>
+		<!--★変更-->
+		<button class="button-G" onclick="answer('Ａ')">Ａ：-10kg</button>
+        <br>
+		<button class="button-G" onclick="answer('Ｂ')">Ｂ：-5kg</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｃ')">Ｃ：±0kg</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｄ')">Ｄ：+5kg</button>
+        <br>
+        <button class="button-G" onclick="answer('Ｅ')">Ｅ：+10kg</button>
+		<br>
+		<br>
+		<br>
+		<script>
+			function answer(answertext) {
+				const answer = answertext;
+				if (!answer) {
+					alert("正解を入力してください");
+					return;
+				}
+				localStorage.setItem('correctAnswer', answer);
+				// ★変更
+				window.location.href = 'result-2.html';			
+			}
+		</script>
+		<br>
+		<br>
+		<br>
+		</center>
+</body>
+</html>
